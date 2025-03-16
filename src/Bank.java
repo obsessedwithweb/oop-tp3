@@ -1,10 +1,10 @@
 import java.text.NumberFormat;
 import java.time.LocalDate;
-import java.util.Date;
+
 
 public class Bank {
     public int balance = 0;
-    public int number = 0;
+    public int number;
     public String Name;
     public int code;
 
