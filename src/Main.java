@@ -18,10 +18,12 @@ public class Main {
             System.out.println();
             System.out.println();
 
-            System.out.println("Select your account:");
-            System.out.println("1- First account");
-            System.out.println("2- Second account");
-            System.out.println("3- Exit");
+            System.out.println("""
+                    Select your account:
+                    1- First account
+                    2- Second account
+                    3- Exit
+                    """);
             String choice = input.nextLine();
             if(choice.equals("1")){
                 bankTools(account1, account2);
@@ -70,12 +72,12 @@ public class Main {
             );
             int option = input.nextInt();
             if (option == 1){
-                System.out.println("Enter the amount you need: ");
+                System.out.print("Enter the amount you need: ");
                 int size = input.nextInt();
                 main.cashIn(size);
             }
             if (option == 2){
-                System.out.println("Enter the amount you want to withdraw: ");
+                System.out.print("Enter the amount you want to withdraw: ");
                 int size = input.nextInt();
                 main.cashOut(size);
             }
@@ -86,13 +88,14 @@ public class Main {
                 main.customerInfo();
             }
             if (option == 5){
-                System.out.println("Enter the amount you need to transfer: ");
+                System.out.print("Enter the amount you need to transfer: ");
                 int size = input.nextInt();
                 main.transferTo(receiver, size);
             }
             if (option == 6){
-                System.out.println("Enter the amount you need to transfer: ");
+                System.out.print("Enter the amount you need to transfer: ");
                 int size = input.nextInt();
+                System.out.print("Enter the day you want to transfer: ");
                 int day = input.nextInt();
                 main.autoTransfer(receiver, size, day);
             }

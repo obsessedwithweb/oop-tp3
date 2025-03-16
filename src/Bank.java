@@ -60,9 +60,11 @@ public class Bank {
             System.out.println("Today is the day!");
             System.out.println("Sending Money to "+recipient.Name+" ...");
             transferTo(recipient, amount);
-            return;
+        } else if (targetDate.isBefore(localDate)) {
+            System.out.println("You will have to wait until "+ targetDate.plusMonths(1)+" to send Money!");
         }
-        System.out.println("You will have to wait until "+ targetDate.plusMonths(1)+" to send Money!");
+        else
+            System.out.println("You will have to wait until "+ targetDate +" to send Money!");
     }
 
 }
