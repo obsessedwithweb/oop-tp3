@@ -3,14 +3,30 @@ import java.time.LocalDate;
 
 
 public class Bank {
-    public int balance = 0;
+    private int balance = 0;
     public int number;
     public String Name;
-    public int code;
+    private int code;
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
 
     public Bank(String name, int code, int number) {
         this.Name = name.toUpperCase();
-        this.code = code;
+        this.setCode(code);
         this.number = number;
     }
 
@@ -23,6 +39,7 @@ public class Bank {
         else
             System.out.println("Sorry, you don't have enough money");
     }
+
     public void cashIn(int amount){
         this.balance = this.balance + amount;
             System.out.println("Depositing into "+ this.Name + " is done as successfully");
@@ -30,14 +47,14 @@ public class Bank {
     }
 
     public void checkBalance(){
-        System.out.println(String.format("Hi " + this.Name + "," + " You've: " + NumberFormat.getCurrencyInstance().format(this.balance)));
+        System.out.println(String.format("Hi " + this.Name + "," + " You've: " + NumberFormat.getCurrencyInstance().format(this.getBalance())));
     }
 
     public void customerInfo(){
         System.out.println("This is your information\n" +
                             "Name: "  + this.Name + " \n" +
                             "Number: "  + this.number + " \n" +
-                            "code: "  + this.code + " \n"
+                            "code: "  + this.getCode() + " \n"
         );
     }
 
